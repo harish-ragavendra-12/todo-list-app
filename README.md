@@ -1,29 +1,27 @@
-# To Do List App 📝
+# To-Do List Application using Python and JSON
 
-A simple command-line based To Do List application built using Python.
-
-This project allows users to manage tasks through a menu-driven interface. Users can add, view, edit, delete, and mark tasks as completed.
+A beginner-friendly command-line To-Do List application built using Python. This project allows users to manage tasks through CRUD operations (Create, Read, Update, Delete) and stores data permanently using a JSON file.
 
 ## Features
 
-✅ Add multiple tasks  
-✅ View all tasks with status  
-✅ Edit existing tasks  
-✅ Delete tasks  
-✅ Mark tasks as completed  
-✅ Input validation using try-except  
-✅ Prevent empty task entries  
+- Add multiple tasks
+- View all tasks
+- Edit existing tasks
+- Delete tasks
+- Mark tasks as completed
+- Stores task data in `tasks.json`
+- Automatically creates `tasks.json` if it doesn't exist
+- Input validation for better user experience
 
 ---
 
 ## Technologies Used
 
 - Python
+- JSON
+- File Handling
 - Lists
 - Dictionaries
-- Functions
-- Loops
-- Conditional Statements
 - Exception Handling
 
 ---
@@ -31,9 +29,10 @@ This project allows users to manage tasks through a menu-driven interface. Users
 ## Project Structure
 
 ```text
-todo-list-app/
+to_do_app/
 │
-├── todo.py
+├── main.py
+├── tasks.json
 └── README.md
 ```
 
@@ -41,91 +40,131 @@ todo-list-app/
 
 ## Task Data Format
 
-Each task is stored as a dictionary:
+Tasks are stored in JSON format:
 
-```python
-{
-    "task": "Learn Python",
-    "status": "Pending"
-}
-```
-
-Example after completion:
-
-```python
-{
-    "task": "Learn Python",
-    "status": "Done"
-}
-```
-
----
-
-## Menu Options
-
-```text
-1. Add Tasks
-2. View Tasks
-3. Delete Tasks
-4. Edit Tasks
-5. Mark Complete
-6. Exit
+```json
+[
+    {
+        "task_id": 1,
+        "task_name": "Learn PostgreSQL",
+        "status": "Pending"
+    },
+    {
+        "task_id": 2,
+        "task_name": "Practice Python",
+        "status": "Done"
+    }
+]
 ```
 
 ---
 
-## Sample Output
+## Application Menu
 
 ```text
 Menu
------------------
+----------------
 1. Add Tasks
 2. View Tasks
 3. Delete Tasks
 4. Edit Tasks
 5. Mark Complete
 6. Exit
-
-Enter your choice: 1
-
-How many tasks do you want to add? 2
-
-Enter task 1: Learn Python
-Enter task 2: Practice PostgreSQL
-
-Tasks added successfully...
-
-
-Tasks to be completed:
-
-1. Learn Python [Pending]
-2. Practice PostgreSQL [Pending]
 ```
 
 ---
 
-## Learning Outcomes
+## How It Works
 
-This project helped practice:
+### Add Task
+Users can enter one or multiple tasks. Tasks are stored with:
 
-- Functions
-- List operations
-- Dictionary usage
-- Input validation
-- Exception handling
-- Building menu-driven applications
-- Basic project structuring
+- Task ID
+- Task Name
+- Status
+
+Default status:
+
+```text
+Pending
+```
+
+---
+
+### View Tasks
+
+Displays all available tasks and their current status.
+
+Example:
+
+```text
+1. Learn PostgreSQL [Pending]
+2. Practice Python [Done]
+```
+
+---
+
+### Edit Tasks
+
+Allows users to update an existing task.
+
+Example:
+
+```text
+Learn SQL --> Learn PostgreSQL
+```
+
+---
+
+### Delete Tasks
+
+Removes selected tasks from the list and updates the JSON file.
+
+---
+
+### Mark Complete
+
+Updates task status:
+
+```text
+Pending → Done
+```
+
+---
+
+## Error Handling
+
+The application handles:
+
+- Invalid numeric input
+- Empty task names
+- Missing JSON file
 
 ---
 
 ## Future Improvements
 
-- Save tasks using file handling
-- Store tasks in PostgreSQL
-- Add due dates
+- Add PostgreSQL database integration
 - Add task priorities
-- Create GUI using Tkinter
-- Build a web version using Flask
+- Add due dates
+- Search tasks
+- Filter completed/pending tasks
+- Build GUI using Tkinter
+- Convert into a Flask web application
+
+---
+
+## Learning Outcomes
+
+This project helped me understand:
+
+- Python functions
+- Lists and dictionaries
+- File handling
+- JSON operations
+- CRUD functionality
+- Exception handling
+- Project structure
 
 ---
 
