@@ -12,14 +12,14 @@ if not os.path.exists("tasks.json"):
 
 # Load tasks from JSON
 def load_tasks():
-    with open("tasks.json", "r") as file:
-        return json.load(file)
+    with open("tasks.json", "r") as json_file:
+        return json.load(json_file)
 
 
 # Save tasks to JSON
 def save_tasks(tasks):
-    with open("tasks.json", "w") as file:
-        json.dump(tasks, file, indent=4)
+    with open("tasks.json", "w") as json_file:
+        json.dump(tasks, json_file, indent=4)
 
 
 # Add tasks
@@ -92,15 +92,15 @@ def del_tasks():
 
     try:
 
-        choice = int(
+        task_no = int(
             input(
                 "Which task number do you want to delete? "
             )
         )
 
-        if 0 < choice <= len(tasks):
+        if 0 < task_no <= len(tasks):
 
-            deleted_task = tasks.pop(choice - 1)
+            deleted_task = tasks.pop(task_no - 1)
 
             save_tasks(tasks)
 
@@ -129,19 +129,19 @@ def edit_tasks():
 
     try:
 
-        choice = int(
+        edit_task_no = int(
             input("Enter task number to edit: ")
         )
 
-        if 0 < choice <= len(tasks):
+        if 0 < edit_task_no <= len(tasks):
 
             new_task = input(
                 "Enter new task: "
             ).strip()
 
-            old_task = tasks[choice - 1]["task_name"]
+            old_task = tasks[edit_task_no - 1]["task_name"]
 
-            tasks[choice - 1]["task_name"] = new_task
+            tasks[edit_task_no - 1]["task_name"] = new_task
 
             save_tasks(tasks)
 
@@ -169,15 +169,15 @@ def mark_complete():
 
     try:
 
-        choice = int(
+        mark_task = int(
             input(
                 "Enter completed task number: "
             )
         )
 
-        if 0 < choice <= len(tasks):
+        if 0 < mark_task <= len(tasks):
 
-            tasks[choice - 1]["status"] = "Done"
+            tasks[mark_task - 1]["status"] = "Done"
 
             save_tasks(tasks)
 

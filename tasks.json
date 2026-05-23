@@ -8,5 +8,20 @@
         "task_id": 2,
         "task_name": "learn python",
         "status": "Done"
+    },
+    {
+        "task_id": 3,
+        "task_name": "shopping",
+        "status": "Pending"
+    },
+    {
+        "task_id": 4,
+        "task_name": "dinner date",
+        "status": "Pending"
+    },
+    {
+        "task_id": 5,
+        "task_name": "yoga",
+        "status": "Pending"
     }
 ]
